@@ -1,0 +1,43 @@
+name: Bugfix
+description: Fix an existing bug.
+title: "fix(<component>): "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to implementing this bugfix!
+  - type: textarea
+    id: which existing open issue(s) does this fix?
+    attributes:
+      label:
+      description: Please list all relevant open issues.
+      placeholder: #1234, #2345, ...
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component does this bugfix belong to?
+      options:
+        - api
+        - cli
+        - inhibitor
+        - silencer
+        - dispatcher
+        - notifier
+        - receiver
+        - other
+      default: 0
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Please confirm the following
+      description: .
+      options:
+        - label: I confirm this is fixing an existing open issue.
+          required: true
+        - label: I have added tests that can reproduce the bug and pass with this fix applied.
+          required: true
